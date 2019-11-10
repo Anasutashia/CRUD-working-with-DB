@@ -123,5 +123,24 @@ namespace Работа_с_БД
                 label7.Text = "заполни всё";
             }
         }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            if (label9.Visible)
+                label9.Visible = false;
+
+            if (!string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text))
+            {
+                SqlCommand command = new SqlCommand("DELETE FROM [Products] WHERE [Id]=@Id", sqlConnection);
+                command.Parameters.AddWithValue("Id", textBox6.Text);
+                await command.ExecuteNonQueryAsync();
+            }
+
+            else
+            {
+                label9.Visible = true;
+                label9.Text = "заполни всё";
+            }
+        }
     }
 }
