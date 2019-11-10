@@ -93,5 +93,35 @@ namespace Работа_с_БД
                 label3.Text = "заполни всё";
             }
         }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            if (label7.Visible)
+                label7.Visible = false;
+
+            if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text) &&
+                !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
+                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                SqlCommand command = new SqlCommand("UPDATE [Products] SET [Name]=@Name, [Price]=@Price WHERE [Id]=@Id", sqlConnection);
+
+                command.Parameters.AddWithValue("Id", textBox3.Text);
+                command.Parameters.AddWithValue("Name", textBox4.Text);
+                command.Parameters.AddWithValue("Price", textBox5.Text);
+
+                await command.ExecuteNonQueryAsync();
+            }
+            else
+                if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                label7.Visible = true;
+                label7.Text = "заполни iD";
+            }
+            else
+            {
+                label7.Visible = true;
+                label7.Text = "заполни всё";
+            }
+        }
     }
 }

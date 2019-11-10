@@ -227,9 +227,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
+            this.label4.Text = "ID";
             // 
             // textBox3
             // 
@@ -243,9 +243,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(26, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.label5.Text = "Наименование";
             // 
             // textBox4
             // 
@@ -262,15 +262,16 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
+            this.label6.Text = "Цена";
             // 
             // textBox5
             // 
@@ -284,9 +285,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(26, 183);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(106, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "label7";
+            this.label7.Text = "Сообщение ошибки";
             // 
             // label8
             // 
