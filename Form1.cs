@@ -31,6 +31,7 @@ namespace Работа_с_БД
                 while (await sqlReader.ReadAsync())
                 {
                     listBox1.Items.Add(Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Name"]) + "  " + Convert.ToString(sqlReader["Price"]));
+                    listBox2.Items.Add(Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Name"]) + "  " + Convert.ToString(sqlReader["Price"]));
                 }
             }
             catch (Exception ex)
@@ -140,6 +141,132 @@ namespace Работа_с_БД
             {
                 label9.Visible = true;
                 label9.Text = "заполни всё";
+            }
+        }
+
+        private async void button5_Click(object sender, EventArgs e)
+        {
+           // listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\VITAN\source\repos\workDB\Database.mdf;Integrated Security=True";
+
+            sqlConnection = new SqlConnection(connectionString);
+
+            await sqlConnection.OpenAsync();
+
+            SqlDataReader sqlReader = null;
+
+            SqlCommand command = new SqlCommand("SELECT * FROM [Products] ORDER BY [Name]", sqlConnection);
+
+            try
+            {
+                sqlReader = await command.ExecuteReaderAsync();
+                while (await sqlReader.ReadAsync())
+                {
+                    listBox2.Items.Add(Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Name"]) + "  " + Convert.ToString(sqlReader["Price"]));
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            finally
+            {
+                if (sqlReader != null)
+                    sqlReader.Close();
+            }
+        }
+
+        private async void button6_Click(object sender, EventArgs e)
+        {
+            // listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\VITAN\source\repos\workDB\Database.mdf;Integrated Security=True";
+
+            sqlConnection = new SqlConnection(connectionString);
+
+            await sqlConnection.OpenAsync();
+
+            SqlDataReader sqlReader = null;
+
+            SqlCommand command = new SqlCommand("SELECT * FROM [Products] ORDER BY [Name] DESC", sqlConnection);
+
+            try
+            {
+                sqlReader = await command.ExecuteReaderAsync();
+                while (await sqlReader.ReadAsync())
+                {
+                    listBox2.Items.Add(Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Name"]) + "  " + Convert.ToString(sqlReader["Price"]));
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            finally
+            {
+                if (sqlReader != null)
+                    sqlReader.Close();
+            }
+        }
+
+        private async void button7_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\VITAN\source\repos\workDB\Database.mdf;Integrated Security=True";
+
+            sqlConnection = new SqlConnection(connectionString);
+
+            await sqlConnection.OpenAsync();
+
+            SqlDataReader sqlReader = null;
+
+            SqlCommand command = new SqlCommand("SELECT * FROM [Products] ORDER BY [Price]", sqlConnection);
+
+            try
+            {
+                sqlReader = await command.ExecuteReaderAsync();
+                while (await sqlReader.ReadAsync())
+                {
+                    listBox2.Items.Add(Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Name"]) + "  " + Convert.ToString(sqlReader["Price"]));
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            finally
+            {
+                if (sqlReader != null)
+                    sqlReader.Close();
+            }
+        }
+
+        private async void button8_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\VITAN\source\repos\workDB\Database.mdf;Integrated Security=True";
+
+            sqlConnection = new SqlConnection(connectionString);
+
+            await sqlConnection.OpenAsync();
+
+            SqlDataReader sqlReader = null;
+
+            SqlCommand command = new SqlCommand("SELECT * FROM [Products] ORDER BY [Price] DESC", sqlConnection);
+
+            try
+            {
+                sqlReader = await command.ExecuteReaderAsync();
+                while (await sqlReader.ReadAsync())
+                {
+                    listBox2.Items.Add(Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Name"]) + "  " + Convert.ToString(sqlReader["Price"]));
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            finally
+            {
+                if (sqlReader != null)
+                    sqlReader.Close();
             }
         }
     }

@@ -332,6 +332,7 @@
             this.button5.TabIndex = 0;
             this.button5.Text = "Сортировка имени по возрастанию";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -341,6 +342,7 @@
             this.button6.TabIndex = 1;
             this.button6.Text = "Сортировка имени по убыванию";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -350,6 +352,7 @@
             this.button7.TabIndex = 2;
             this.button7.Text = "Сортировка цены по возрастанию";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -359,6 +362,7 @@
             this.button8.TabIndex = 3;
             this.button8.Text = "Сортировка цены по убыванию";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // listBox2
             // 
